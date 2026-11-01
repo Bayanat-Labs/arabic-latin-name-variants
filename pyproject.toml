@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arabic-latin-name-variants"
+dynamic = ["version"]
+description = "Arabic-Latin name variants from the Wikidata JSON dump: a relation filter, compound-aware token alignment, variant clusters, Buckwalter and ALA-LC fields, and a name-matching benchmark. By Bayanat Labs."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Bayanat Labs", email = "hello@bayanatlabs.com" }]
+dependencies = [
+  "regex>=2023.0",
+  "pyarrow>=15",
+  "duckdb>=1.3",
+  "zstandard>=0.22",
+  "requests>=2.28",
+  "arabic-normalize @ git+https://github.com/Bayanat-Labs/arabic-normalize@3ad22326a66596e8dc413321017251eed6e60439",
+]
+keywords = ["arabic", "transliteration", "romanization", "name-matching", "wikidata", "buckwalter", "ala-lc",
+            "kyc", "entity-linking"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Natural Language :: Arabic",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Text Processing :: Linguistic",
+]
+
+[project.optional-dependencies]
+fast = ["orjson>=3.9"]
+chart = ["matplotlib>=3.7"]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://bayanatlabs.com/open/arabic-latin-name-variants"
+Repository = "https://github.com/Bayanat-Labs/arabic-latin-name-variants"
+Issues = "https://github.com/Bayanat-Labs/arabic-latin-name-variants/issues"
+Dataset = "https://huggingface.co/datasets/Bayanat-Labs/arabic-latin-name-variants"
+
+[project.scripts]
+arabic-latin-name-variants = "arabic_latin_name_variants.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+packages = ["arabic_latin_name_variants"]
+
+[tool.setuptools.dynamic]
+version = { attr = "arabic_latin_name_variants.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"

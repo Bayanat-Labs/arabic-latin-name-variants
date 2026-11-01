@@ -1,0 +1,20 @@
+arabic-latin-name-variants by Bayanat Labs
+Copyright 2026 Bayanat Labs
+
+The code in this repository is licensed under the Apache License 2.0 (LICENSE).
+
+Data source: Wikidata (https://www.wikidata.org). Wikidata's structured data is dedicated to the
+public domain under CC0 1.0. The tables are built from the Wikidata JSON dumps at
+https://dumps.wikimedia.org/wikidatawiki/entities/. No Wikidata data is included in this
+repository other than the synthetic test fixture in tests/fixtures/ (made-up items in the dump
+format); the tables are published as a dataset on Hugging Face.
+
+The dump reader (src/arabic_latin_name_variants/stream.py), the age rule and the class-group rule
+are adapted from the Bayanat Labs arab-world-wikidata builder (Apache-2.0).
+
+Runtime dependencies: arabic-normalize (Apache-2.0 AND CC-BY-4.0 AND Unicode-3.0), regex
+(Apache-2.0 AND CNRI-Python), PyArrow (Apache-2.0), DuckDB (MIT), zstandard (BSD-3-Clause), requests (Apache-2.0).
+Optional: orjson (MPL-2.0 AND (Apache-2.0 OR MIT)), Matplotlib (Matplotlib licence, BSD-style).
+
+The Bayanat Labs name, logo and project branding are not licensed under the Apache License 2.0 or
+under any other licence in this repository.

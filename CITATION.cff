@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use the code, please cite it as below and give the version."
+type: software
+title: "arabic-latin-name-variants"
+version: "0.1.0"
+date-released: "2026-11-01"
+license: Apache-2.0
+repository-code: "https://github.com/Bayanat-Labs/arabic-latin-name-variants"
+url: "https://github.com/Bayanat-Labs/arabic-latin-name-variants"
+authors:
+  - name: "Bayanat Labs"
+keywords:
+  - arabic
+  - transliteration
+  - romanization
+  - name-matching
+  - wikidata
+  - buckwalter
+  - ala-lc
+abstract: "Code that builds the Arabic-Latin Name Variants dataset (https://huggingface.co/datasets/Bayanat-Labs/arabic-latin-name-variants): Arabic-script and Latin-script names of people, places and organisations from the Wikidata JSON dump of 2026-10-26, paired and labelled as transliteration, mixed or translation/exonym, aligned word by word, with Buckwalter and ALA-LC fields, Latin spelling variants per Arabic name word, full-name clusters and a rule-built Arabic-Latin name-matching benchmark. Data derived from Wikidata (CC0 1.0); code Apache-2.0."
